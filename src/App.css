@@ -6,4 +6,10 @@
 
 .WeatherCard {
   border: 1px solid black;
+  border-radius: 8px;
+}
+
+.CurrentTempWrapper {
+  padding: 20px;
+  text-align: center;
 }
