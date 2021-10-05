@@ -4,12 +4,63 @@
   padding: 0 25px;
 }
 
+.CityLinks {
+  display: flex;
+  justify-content: space-around;
+  margin: 80px;
+}
+
 .WeatherCard {
   border: 1px solid black;
   border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .CurrentTempWrapper {
   padding: 20px;
   text-align: center;
+  flex-grow: 2;
+}
+
+.CityName {
+  text-align: center;
+  text-transform: capitalize;
+  padding: 20px;
+}
+
+.Subheader {
+  font-size: 14px;
+}
+
+.CurrentTemperature {
+  font-size: 32px;
+  margin: 10px;
+}
+
+.HLTemp {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.HTemp {
+  margin: 10px;
+}
+
+.LTemp {
+  margin: 10px;
+}
+
+.RightSide {
+  border-left: 1px solid black;
+  flex-grow: 0.25;
+  justify-content: flex-start;
+  margin-left: 20px;
+  padding: 20px;
+}
+
+.WeatherDetails {
+  padding: 20px;
 }

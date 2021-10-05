@@ -69,15 +69,21 @@ function Home() {
 
   return (
     <main className="App">
-      <header>
+      <header className="CityLinks">
         <p>
           <a href="/?city=paris">Paris</a>
         </p>
         <p>
           <a href="/?city=tokyo">Tokyo</a>
         </p>
+        <p>
+          <a href="/?city=Montauk">Montuak</a>
+        </p>
+        <p>
+          <a href="/?city=Seattle">Seattle</a>
+        </p>
       </header>
-      <h1>{city}</h1>
+      <h1 className="CityName">{city}</h1>
       <WeatherCard
         cloudiness={cloudiness}
         currentTemp={currentTemp}
