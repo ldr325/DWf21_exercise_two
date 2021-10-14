@@ -57,31 +57,36 @@ function Home() {
     if (!weatherData) return {};
     return {
       cloudiness: weatherData.clouds.all,
-      currentTemp: weatherData.main.temp,
-      highTemp: weatherData.main.temp_max,
+      currentTemp: Math.round(weatherData.main.temp),
+      highTemp: Math.round(weatherData.main.temp_max),
       humidity: weatherData.main.humidity,
-      lowTemp: weatherData.main.temp_min,
+      lowTemp: Math.round(weatherData.main.temp_min),
       weatherDescription: weatherData.weather[0].description,
       weatherType: weatherData.weather[0].main,
-      windSpeed: weatherData.wind.speed,
+      windSpeed: Math.round(weatherData.wind.speed),
     };
   }, [weatherData]);
 
   return (
     <main className="App">
-      <header className="CityLinks">
-        <p>
-          <a href="/?city=paris">Paris</a>
-        </p>
-        <p>
-          <a href="/?city=tokyo">Tokyo</a>
-        </p>
-        <p>
-          <a href="/?city=Montauk">Montuak</a>
-        </p>
-        <p>
-          <a href="/?city=Seattle">Seattle</a>
-        </p>
+      <header>
+        <nav className="Navigation">
+          <a href="/?city=paris" className={city === "paris" && "Active"}>
+            Paris
+          </a>
+
+          <a href="/?city=tokyo" className={city === "tokyo" && "Active"}>
+            Tokyo
+          </a>
+
+          <a href="/?city=montauk" className={city === "montauk" && "Active"}>
+            Montauk
+          </a>
+
+          <a href="/?city=seattle" className={city === "seattle" && "Active"}>
+            Seattle
+          </a>
+        </nav>
       </header>
       <h1 className="CityName">{city}</h1>
       <WeatherCard

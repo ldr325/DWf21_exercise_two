@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherImage from "./WeatherImage";
 
 function WeatherCard({
   cloudiness,
@@ -11,34 +12,40 @@ function WeatherCard({
   windSpeed,
 }) {
   return (
-    <section className="WeatherCard">
+    <section
+      className="WeatherCard"
+      style={{
+        backgroundColor: `rgba(150,150,150, ${cloudiness / 100})`,
+      }}
+    >
       <div className="CurrentTempWrapper">
-        <h2 className="Subheader">Current Temperature</h2>
-        <p className="CurrentTemperature">
-          <strong>{currentTemp}</strong>
-        </p>
-        <div className="HLTemp">
-          <p className="HTemp">H:{highTemp}</p>
-
-          <p className="LTemp">L:{lowTemp}</p>
+        <div className="WeatherImageWrapper">
+          <WeatherImage weatherType={weatherType} />
         </div>
-        <p>
+        <p className="WeatherDescriptionLine">
           <strong>{weatherDescription}</strong>
         </p>
+        <p className="CurrentTemperature">
+          <strong>{currentTemp}°</strong>
+        </p>
+        <div className="HLTemp">
+          <p className="HTemp">H: {highTemp}°</p>
+          <p className="LTemp">L: {lowTemp}°</p>
+        </div>
       </div>
-      <div className="RightSide">
+      <div className="WeatherDetailWrapper">
         <h3 className="WeatherDetails">Weather Details</h3>
-        <p>
-          Cloudiness: <strong>{cloudiness}</strong>
+        <p className="Cloudline">
+          Cloudiness: <strong>{cloudiness}%</strong>
         </p>
-        <p>
-          Humidity: <strong>{humidity}</strong>
+        <p className="Humidityline">
+          Humidity: <strong>{humidity}%</strong>
         </p>
-        <p>
-          WeatherType: <strong>{weatherType}</strong>
+        <p className="Weatherline">
+          Weather: <strong>{weatherType}</strong>
         </p>
-        <p>
-          WindSpeed: <strong>{windSpeed}</strong>
+        <p className="Windline">
+          Wind: <strong>{windSpeed}mph</strong>
         </p>
       </div>
     </section>

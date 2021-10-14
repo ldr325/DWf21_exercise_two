@@ -1,66 +1,151 @@
+body {
+  background: rgb(68, 97, 120, 60%); /*#446178;*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .App {
   margin: 0 auto;
   max-width: 1080px;
   padding: 0 25px;
 }
 
-.CityLinks {
+/*Navigation and City name  CSS*/
+
+.Navigation {
   display: flex;
   justify-content: space-around;
-  margin: 80px;
+  padding: 30px;
 }
 
+.Navigation a {
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.Navigation a.Active {
+  border-bottom: 2px solid black;
+}
+
+.Navigation a:hover {
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+.CityName {
+  padding: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/*WeatherCard CSS*/
+
 .WeatherCard {
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 8px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 200px;
+  margin-right: 200px;
 }
+
+/*Current Temperature Wrapper plus Image CSS*/
 
 .CurrentTempWrapper {
   padding: 20px;
   text-align: center;
-  flex-grow: 2;
 }
 
-.CityName {
-  text-align: center;
+.WeatherImageWrapper {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 160px;
+  padding-top: 0px;
+}
+
+.WeatherDescriptionLine {
+  font-size: 20px;
   text-transform: capitalize;
-  padding: 20px;
-}
-
-.Subheader {
-  font-size: 14px;
 }
 
 .CurrentTemperature {
-  font-size: 32px;
-  margin: 10px;
+  font-size: 52px;
+  margin: 0px;
+  margin-left: 10px;
 }
 
 .HLTemp {
   text-align: center;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 0px;
 }
 
 .HTemp {
   margin: 10px;
 }
 
+.HTemp:hover {
+  color: #ec341e;
+}
+
 .LTemp {
   margin: 10px;
 }
 
-.RightSide {
-  border-left: 1px solid black;
-  flex-grow: 0.25;
-  justify-content: flex-start;
-  margin-left: 20px;
-  padding: 20px;
+.LTemp:hover {
+  color: #1b66bf;
+}
+
+/*Right Side "Weather Details" CSS*/
+
+.WeatherDetailWrapper {
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
 }
 
 .WeatherDetails {
-  padding: 20px;
+  font-size: 24px;
+}
+
+.Cloudline {
+  font-size: 18px;
+  word-spacing: 20px;
+}
+
+.Humidityline {
+  font-size: 18px;
+  word-spacing: 40px;
+}
+
+.Weatherline {
+  font-size: 18px;
+  word-spacing: 42px;
+}
+
+.Windline {
+  font-size: 18px;
+  word-spacing: 69px;
+}
+
+/*Mobile CSS*/
+
+@media (min-width: 800px) {
+  .WeatherCard {
+    flex-direction: row;
+  }
+
+  .CityName {
+    font-size: 50px;
+  }
+
+  .WeatherImageWrapper {
+    justify-content: center;
+  }
 }
